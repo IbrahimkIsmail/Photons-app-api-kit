@@ -322,7 +322,7 @@
                     <div class="row row-paddingless">
                         <!--begin:Item-->
                         <div class="col-6">
-                            <!-- {{ //route('admin.settings.general.edit') }} -->
+                          
                             <a href=""
                                class="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
             <span class="svg-icon svg-icon-3x svg-icon-success">
