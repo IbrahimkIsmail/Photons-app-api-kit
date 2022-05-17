@@ -8,8 +8,11 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RecipeRequest;
 use Carbon\Carbon;
 use Yajra\DataTables\DataTables;
+use App\Http\Traits\FcmTrait;
+
 class RecipeController extends Controller
 {
+    use FcmTrait;
     /**
      * Display a listing of the resource.
      *
@@ -82,8 +85,10 @@ class RecipeController extends Controller
             $data['main_image'] = uploadFileImage($main_image, 'recipes/main_images');
         }
         $item = Recipe::query()->create($data);
+        $this->sendToTopic($item,'users');
         if ($item) {
             $return = ["result" => "ok", "message" => admin("Add Operation Successfully")];
+           
         } else {
             $return = ["result" => "error", "message" => admin("Add Operation Failed")];
         }
