@@ -24,7 +24,7 @@
                     <div class="d-flex align-items-center mt-2 mb-2 mr-5" id="kt_subheader_search">
                         <span class="text-dark-50 font-weight-bold" id="kt_subheader_total">
                             <a class="text-dark"
-                               href="{{route('admin.fqas.index')}}">{{admin('FAQ ')}}</a>
+                               href="">{{admin('FAQ ')}}</a>
                         </span>
                     </div>
                     <!--end::Search Form-->
@@ -251,7 +251,7 @@
                                         };
                                         toastr.success(e['message']);
                                         setTimeout(function () {
-                                            $(location).attr('href', '{{route('admin.fqas.index')}}');
+                                            // $(location).attr('href', '{{route('admin.fqas.index')}}');
                                         }, 1500);
 
                                     } else {

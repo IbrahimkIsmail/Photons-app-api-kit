@@ -342,7 +342,7 @@
                         <!--end:Item-->
                         <!--begin:Item-->
                         <div class="col-6">
-                            <a href="{{ route('admin.settings.currencies.index') }}"
+                            <a href=""
                                class="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
             <span class="svg-icon svg-icon-3x svg-icon-success">
               <!--begin::Svg Icon | path:/home/keenthemes/www/metronic/themes/metronic/theme/html/demo1/dist/../src/media/svg/icons/Shopping/Money.svg--><svg
@@ -365,7 +365,7 @@
                         <!--end:Item-->
                         <!--begin:Item-->
                         <div class="col-6">
-                            <a href="{{ route('admin.pages.index') }}"
+                            <a href=""
                                class="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
             <span class="svg-icon svg-icon-3x svg-icon-success">
              <!--begin::Svg Icon | path:/home/keenthemes/www/metronic/themes/metronic/theme/html/demo1/dist/../src/media/svg/icons/Code/Git4.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -383,7 +383,7 @@
                         <!--end:Item-->
                         <!--begin:Item-->
                         <div class="col-6">
-                            <a href="{{ route('admin.fqas.index') }}"
+                            <a href=""
                                class="d-block py-10 px-5 text-center bg-hover-light border-right border-bottom">
             <span class="svg-icon svg-icon-3x svg-icon-success">
              <!--begin::Svg Icon | path:/home/keenthemes/www/metronic/themes/metronic/theme/html/demo1/dist/../src/media/svg/icons/Code/Question-circle.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -456,8 +456,8 @@
                                 <span
                                     class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">{{admin('Hi')}}</span>
                     <span
-                        class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ Auth::guard('admin')->user()->name }}</span>
-                    <img class="rounded-circle" alt="Pic" width="35" height="35" src="{{ asset(optional(Auth::guard('admin')->user())->profile_image) }}"/>
+                        class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ Auth::guard('web')->user()->name }}</span>
+                    <img class="rounded-circle" alt="Pic" width="35" height="35" src="{{ asset(optional(Auth::guard('web')->user())->profile_image) }}"/>
 
                 </div>
             </div>
@@ -483,12 +483,12 @@
         <!--begin::Header-->
         <div class="d-flex align-items-center mt-5">
             <div class="symbol symbol-100 mr-5">
-                <div class="symbol-label" style="background-image:url({{asset(Auth::guard('admin')->user()->profile_image)}})"></div>
+                <div class="symbol-label" style="background-image:url({{asset(Auth::guard('web')->user()->profile_image)}})"></div>
                 <i class="symbol-badge bg-success"></i>
             </div>
             <div class="d-flex flex-column">
-                <a class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{Auth::guard('admin')->user()->name}}</a>
-                <div class="text-muted mt-1">{{ admin("Admin") }}</div>
+                <a class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{Auth::guard('web')->user()->name}}</a>
+                <div class="text-muted mt-1">{{ admin("web") }}</div>
                 <div class="navi mt-2">
                     <a class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -509,14 +509,14 @@
                                             <!--end::Svg Icon-->
 										</span>
 									</span>
-									<span class="navi-text text-muted text-hover-primary">{{Auth::guard('admin')->user()->email}}</span>
+									<span class="navi-text text-muted text-hover-primary">{{Auth::guard('web')->user()->email}}</span>
 								</span>
                     </a>
-                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
                           style="display: none;">
                         {{ csrf_field() }}
                     </form>
-                    <a href="{{ route('admin.logout') }}"
+                    <a href="{{ route('logout') }}"
                        class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">{{admin('Logout')}}</a>
                 </div>
@@ -529,7 +529,7 @@
         <!--begin::Nav-->
         <div class="navi navi-spacer-x-0 p-0">
             <!--begin::Item-->
-            <a href="{{ route('admin.profile.edit',Auth::guard('admin')->user()->id) }}" class="navi-item">
+            <a href="" class="navi-item">
                 <div class="navi-link">
                     <div class="symbol symbol-40 bg-light mr-3">
                         <div class="symbol-label">

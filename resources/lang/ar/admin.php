@@ -404,5 +404,6 @@ return
   'Activate is happened.' => 'Activate is happened.',  
   'parent Name' => 'parent Name',  
   'Recipes' => 'Recipes',  
-  'Add Operation Failed' => 'Add Operation Failed',
+  'Add Operation Failed' => 'Add Operation Failed',  
+  'web' => 'web',
 ];
