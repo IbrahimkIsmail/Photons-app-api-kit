@@ -13,11 +13,11 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for photons_app_api_kit
-CREATE DATABASE IF NOT EXISTS `photons_app_api_kit` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
-USE `photons_app_api_kit`;
+-- Dumping database structure for data_prod
+CREATE DATABASE IF NOT EXISTS `data_prod` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
+USE `data_prod`;
 
--- Dumping structure for table photons_app_api_kit.activity_log
+-- Dumping structure for table data_prod.activity_log
 CREATE TABLE IF NOT EXISTS `activity_log` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `log_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -37,12 +37,12 @@ CREATE TABLE IF NOT EXISTS `activity_log` (
   KEY `activity_log_log_name_index` (`log_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.activity_log: ~0 rows (approximately)
+-- Dumping data for table data_prod.activity_log: ~0 rows (approximately)
 DELETE FROM `activity_log`;
 /*!40000 ALTER TABLE `activity_log` DISABLE KEYS */;
 /*!40000 ALTER TABLE `activity_log` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.categories
+-- Dumping structure for table data_prod.categories
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.categories: ~39 rows (approximately)
+-- Dumping data for table data_prod.categories: ~39 rows (approximately)
 DELETE FROM `categories`;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `parent_id`, `name`, `icon`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -101,7 +101,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `name`, `icon`, `status`, `created_
 	(47, NULL, 'التصنيفات', NULL, 'on', '2022-05-06 21:01:18', '2022-05-06 21:01:18', NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.failed_jobs
+-- Dumping structure for table data_prod.failed_jobs
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -114,12 +114,12 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.failed_jobs: ~0 rows (approximately)
+-- Dumping data for table data_prod.failed_jobs: ~0 rows (approximately)
 DELETE FROM `failed_jobs`;
 /*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.migrations
+-- Dumping structure for table data_prod.migrations
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.migrations: ~9 rows (approximately)
+-- Dumping data for table data_prod.migrations: ~9 rows (approximately)
 DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -143,7 +143,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(12, '2022_05_06_201450_create_recipes_table', 5);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.password_resets
+-- Dumping structure for table data_prod.password_resets
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -151,12 +151,12 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
   KEY `password_resets_email_index` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.password_resets: ~0 rows (approximately)
+-- Dumping data for table data_prod.password_resets: ~0 rows (approximately)
 DELETE FROM `password_resets`;
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.personal_access_tokens
+-- Dumping structure for table data_prod.personal_access_tokens
 CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -172,12 +172,12 @@ CREATE TABLE IF NOT EXISTS `personal_access_tokens` (
   KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.personal_access_tokens: ~0 rows (approximately)
+-- Dumping data for table data_prod.personal_access_tokens: ~0 rows (approximately)
 DELETE FROM `personal_access_tokens`;
 /*!40000 ALTER TABLE `personal_access_tokens` DISABLE KEYS */;
 /*!40000 ALTER TABLE `personal_access_tokens` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.recipes
+-- Dumping structure for table data_prod.recipes
 CREATE TABLE IF NOT EXISTS `recipes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `kitchen_id` bigint(20) unsigned NOT NULL,
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `recipes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.recipes: ~26 rows (approximately)
+-- Dumping data for table data_prod.recipes: ~26 rows (approximately)
 DELETE FROM `recipes`;
 /*!40000 ALTER TABLE `recipes` DISABLE KEYS */;
 INSERT INTO `recipes` (`id`, `kitchen_id`, `category_id`, `occasion_id`, `title`, `description`, `main_image`, `cooking_time`, `number_of_people`, `ingredients`, `prepares`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -233,7 +233,7 @@ INSERT INTO `recipes` (`id`, `kitchen_id`, `category_id`, `occasion_id`, `title`
 	(38, 9, 25, 40, 'Commodi laudantium', 'Amet voluptas volup', '/uploads/photos/recipes/main_images/2022-05-18/z4r66n9IJqPYZsDJ.jpg', 69, 67, '["Magna elit id cons"]', '["Est reprehenderit p"]', 'published', '2022-05-18 12:58:41', '2022-05-18 12:58:41', NULL);
 /*!40000 ALTER TABLE `recipes` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.settings
+-- Dumping structure for table data_prod.settings
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8mb4_unicode_ci,
@@ -265,14 +265,14 @@ CREATE TABLE IF NOT EXISTS `settings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.settings: ~0 rows (approximately)
+-- Dumping data for table data_prod.settings: ~0 rows (approximately)
 DELETE FROM `settings`;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
 INSERT INTO `settings` (`id`, `name`, `description`, `email`, `mobile`, `logo`, `logo_min`, `whatsApp`, `facebook`, `twitter`, `instagram`, `youtube`, `telephone`, `fax`, `viber`, `snapchat`, `google`, `linkedin`, `android_url`, `ios_url`, `app_url`, `app_ratio`, `app_status`, `have_update`, `created_at`, `updated_at`, `deleted_at`) VALUES
 	(1, 'photonslab api kit\r\n', 'photonslab api kit', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'up', 0, '2022-05-05 16:33:49', '2022-05-05 16:33:51', NULL);
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
--- Dumping structure for table photons_app_api_kit.users
+-- Dumping structure for table data_prod.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -286,7 +286,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table photons_app_api_kit.users: ~2 rows (approximately)
+-- Dumping data for table data_prod.users: ~2 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
