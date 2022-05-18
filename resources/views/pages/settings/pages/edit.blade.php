@@ -237,7 +237,7 @@
                                         };
                                         toastr.success(e['message']);
                                         setTimeout(function () {
-                                            $(location).attr('href', '{{route('admin.pages.index')}}');
+                                            // $(location).attr('href', '{{route('admin.pages.index')}}');
                                         }, 1500);
 
                                     } else {
