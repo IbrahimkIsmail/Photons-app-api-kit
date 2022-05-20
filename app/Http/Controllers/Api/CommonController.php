@@ -18,10 +18,7 @@ class CommonController extends Controller
         $data['categories'] = Category::query()->where('status', 'on')->type('47')->where('deleted_at', NULL)->get();
         $data['recipes'] = Recipe::query()->where('status', 'published')->where('deleted_at', NULL)->limit(10)->get();
         return response()->json([
-            'message' => [
-                'type' => 'success',
-                'data' => $data
-            ],
+            'data' => $data
         ]);
     }
 
