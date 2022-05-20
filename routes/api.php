@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1/'], function () {
     Route::group(['prefix' => 'common'], function () {
+        Route::get('/homepage', [CommonController::class,'homepage']);
         Route::get('/categories/parents', [CommonController::class,'parents'])->name('categories.parents');
         Route::get('/recipes/kitchens', [CommonController::class,'kitchens'])->name('recipes.kitchens');
         Route::get('/recipes/categories', [CommonController::class,'categories'])->name('recipes.categories');

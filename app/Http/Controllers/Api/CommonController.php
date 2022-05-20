@@ -4,10 +4,27 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CategoryResource;
+use App\Http\Resources\HomeResource;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Recipe;
+use Illuminate\Http\JsonResponse;
+
 class CommonController extends Controller
 {
+
+    public function homepage()
+    {
+        $data['categories'] = Category::query()->where('status', 'on')->type('47')->where('deleted_at', NULL)->get();
+        $data['recipes'] = Recipe::query()->where('status', 'published')->where('deleted_at', NULL)->limit(10)->get();
+        return response()->json([
+            'message' => [
+                'type' => 'success',
+                'data' => $data
+            ],
+        ]);
+    }
+
     public function parents(Request $request)
     {
         $query = Category::query()->where('status', 'on')->whereNull('parent_id')->where('deleted_at', NULL);
@@ -18,7 +35,7 @@ class CommonController extends Controller
                     ->orwhereRaw('lower(id) like (?)', ["%{$search}%"]);
             });
         }
-        $data = $query->paginate(25);
+        $data = $query->get();
         return CategoryResource::collection($data);
     }
 
