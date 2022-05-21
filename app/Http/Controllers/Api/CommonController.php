@@ -15,8 +15,7 @@ class CommonController extends Controller
 
     public function homepage()
     {
-        $data['categories'] = Category::query()->where('status', 'on')->type('47')->where('deleted_at', NULL)->get();
-        $data['recipes'] = Recipe::query()->where('status', 'published')->where('deleted_at', NULL)->limit(10)->get();
+        $data['categories'] = Category::query()->where('status', 'on')->type('47')->where('deleted_at', NULL)->with('recipes')->get();
         return response()->json([
             'data' => $data
         ]);

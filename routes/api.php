@@ -32,7 +32,9 @@ Route::group(['prefix' => 'v1/'], function () {
     });
    
     Route::group(['prefix' => 'recipes'], function () {
-        Route::get('/', [RecipeController::class,'recipes'])->name('categories.parents');
+        Route::get('/', [RecipeController::class,'recipes'])->name('recipes');
+        Route::get('/featured_recipes', [RecipeController::class,'featured_recipes'])->name('featured_recipes');
+        
     });
 
 });

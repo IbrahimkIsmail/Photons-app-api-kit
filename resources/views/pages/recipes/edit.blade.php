@@ -181,6 +181,21 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-lg-6">
+                                            <label>  {{ web('featured') }}</label>
+                                            <div class="radio-inline">
+                                                <label class="radio radio-rounded">
+                                                    <input type="radio" value="0" @if ($recipe->featured == 0) checked @endif name="featured"/>
+                                                    <span></span>
+                                                    {{ web('no featured') }}
+                                                </label>
+                                                <label class="radio radio-rounded">
+                                                    <input value="1" type="radio" @if ($recipe->featured == 1) checked @endif name="featured"/>
+                                                    <span></span>
+                                                    {{ web('featured') }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <label>{{web('number_of_people')}}</label>
                                             <span style="color: red;"> *  </span>
                                             <div class="input-group">

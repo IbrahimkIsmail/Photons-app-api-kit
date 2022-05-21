@@ -28,6 +28,11 @@ class RecipeController extends Controller
         });
         return RecipeResource::collection($query->get());
     }
+    
+    public function featured_recipes(){
 
+        return RecipeResource::collection(Recipe::where('featured',1)->get());
+        
+    }
     
 }

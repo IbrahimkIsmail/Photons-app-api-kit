@@ -93,5 +93,7 @@ return[
   'cooking_time' => 'cooking_time',  
   'number_of_people' => 'number_of_people',  
   'Ingredients' => 'Ingredients',  
-  'prepares' => 'prepares',
+  'prepares' => 'prepares',  
+  'no featured' => 'no featured',  
+  'featured' => 'featured',
 ];
