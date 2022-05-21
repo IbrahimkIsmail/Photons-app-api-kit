@@ -35,6 +35,7 @@ class RecipeRequest extends FormRequest
             'ingredients' => '',
             'prepares' => '',
             'status' => '',
+            'featured' => '',
         ];
     }
 }

@@ -32,5 +32,9 @@ class Category extends Model
         return $this->hasMany('App\Models\Category', 'parent_id');
     }
 
+    public function recipes(){
+        return $this->hasMany('App\Models\Recipe', 'category_id');
+    }
+
 
 }

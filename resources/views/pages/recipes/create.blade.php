@@ -164,6 +164,21 @@
                                         </div>
                                    </div>
                                    <div class="form-group row">
+                                    <div class="col-lg-6">
+                                        <label>  {{ web('featured') }}</label>
+                                        <div class="radio-inline">
+                                            <label class="radio radio-rounded">
+                                                <input type="radio" value="0" checked="checked" name="featured"/>
+                                                <span></span>
+                                                {{ web('no featured') }}
+                                            </label>
+                                            <label class="radio radio-rounded">
+                                                <input value="1" type="radio" name="featured"/>
+                                                <span></span>
+                                                {{ web('featured') }}
+                                            </label>
+                                        </div>
+                                    </div>
                                         <div class="col-lg-6">
                                             <label>{{web('number_of_people')}}</label>
                                             <span style="color: red;"> *  </span>
@@ -171,6 +186,7 @@
                                                 <input type="number" min="1" class="form-control" name="number_of_people">
                                             </div>
                                         </div>
+                                      
                                    </div>
                                    <div id="kt_repeater_1">
                                     <div class="form-group row">
