@@ -9,13 +9,14 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Recipe;
 use Illuminate\Http\JsonResponse;
-
+use App\Http\Resources\RecipeResource;
 class CommonController extends Controller
 {
 
     public function homepage()
     {
         $data['categories'] = Category::query()->where('status', 'on')->type('47')->where('deleted_at', NULL)->with('recipes')->get();
+        $data['featured'] = RecipeResource::collection(Recipe::where('featured',1)->get());
         return response()->json([
             'data' => $data
         ]);
