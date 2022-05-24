@@ -33,7 +33,7 @@ class Category extends Model
     }
 
     public function recipes(){
-        return $this->hasMany('App\Models\Recipe', 'category_id');
+        return $this->hasMany('App\Models\Recipe', 'category_id')->orderBy('created_at', 'DESC');
     }
 
 

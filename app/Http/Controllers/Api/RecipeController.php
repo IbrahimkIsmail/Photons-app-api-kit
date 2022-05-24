@@ -26,12 +26,12 @@ class RecipeController extends Controller
         ->when($request->kitchen_id, function($query,$request) {
             $query->where('occasion_id',$request->occasion_id);
         });
-        return RecipeResource::collection($query->get());
+        return RecipeResource::collection($query->orderBy('created_at', 'DESC')->get());
     }
     
     public function featured_recipes(){
 
-        return RecipeResource::collection(Recipe::where('featured',1)->get());
+        return RecipeResource::collection(Recipe::where('featured',1)->orderBy('created_at', 'DESC')->get());
         
     }
     
