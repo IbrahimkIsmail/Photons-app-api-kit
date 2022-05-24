@@ -646,8 +646,14 @@ function status_text($status)
 function destroyFile($file)
 {
 
-    if (!empty($file) and File::exists(public_path($file)))
-        File::delete(public_path($file));
+    if (!empty($file) and File::exists(public_path($file))){
+       if( File::delete(public_path($file))){
+           return true;
+       }
+
+       return false;
+    }
+      
 
 }
 
