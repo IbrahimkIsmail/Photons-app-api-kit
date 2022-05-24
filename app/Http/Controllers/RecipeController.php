@@ -153,8 +153,13 @@ class RecipeController extends Controller
     {
         $data = Recipe::query()->findOrFail($request->get('id'));
         if (!$data) return response(["msg" => "not found"], 404);
-        if ($data->delete()) {
-            return response(["msg" => "success"], 200);
+        if ($data) {
+           if( destroyFile($data->main_image)){
+               $data->delete();
+              return response(["msg" => "success"], 200);
+           }else{
+               return response(["msg" => "error"], 400);
+           }
         } else {
             return response(["msg" => "error"], 400);
         }
