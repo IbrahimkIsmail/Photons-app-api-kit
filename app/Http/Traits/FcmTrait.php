@@ -12,6 +12,8 @@ trait FcmTrait {
                 'title'     =>  $model->title,
                 'vibrate'   => 1,
                 'sound'     => 1,
+                'badge'     => 1,
+                'image'     => url($model->main_image)  
             );
 
             $fields = array
