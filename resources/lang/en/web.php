@@ -96,4 +96,6 @@ return[
   'prepares' => 'prepares',  
   'no featured' => 'no featured',  
   'featured' => 'featured',
+  
+  'Password is not correct' => 'Password is not correct',
 ];

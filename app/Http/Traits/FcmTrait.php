@@ -10,10 +10,7 @@ trait FcmTrait {
             $msg = array(
                 'body'      => $model->title,
                 'title'     =>  $model->title,
-                'vibrate'   => 1,
-                'sound'     => 1,
-                'badge'     => 1,
-                'image'     => url($model->main_image)  
+                'image'     => 'http://157.175.99.93/uploads/photos/recipes/main_images/2022-05-24/rxkQgowojpzboERH.jpg'  
             );
 
             $fields = array

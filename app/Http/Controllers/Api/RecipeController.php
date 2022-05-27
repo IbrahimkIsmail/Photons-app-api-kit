@@ -34,5 +34,11 @@ class RecipeController extends Controller
         return RecipeResource::collection(Recipe::where('featured',1)->orderBy('created_at', 'DESC')->get());
         
     }
+
+    public function byCategory($category_id){
+
+        return RecipeResource::collection(Recipe::where('category_id',$category_id)->orderBy('created_at', 'DESC')->get());
+        
+    }
     
 }
