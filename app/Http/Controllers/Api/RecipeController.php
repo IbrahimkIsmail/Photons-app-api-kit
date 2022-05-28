@@ -40,5 +40,11 @@ class RecipeController extends Controller
         return RecipeResource::collection(Recipe::where('category_id',$category_id)->orderBy('created_at', 'DESC')->get());
         
     }
+
+    public function search($text){
+
+        return RecipeResource::collection(Recipe::where('title', 'LIKE', "%{$text}%") ->orderBy('created_at', 'DESC')->get());
+        
+    }
     
 }
