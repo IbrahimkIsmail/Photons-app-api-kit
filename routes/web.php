@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\PageController;
 
 
 /*
@@ -56,3 +57,7 @@ Route::post('/recipes/store', [RecipeController::class,'store'])->name('recipes.
 Route::get('/recipes/edit/{recipe}', [RecipeController::class,'edit'])->name('recipes.edit');
 Route::post('/recipes/update', [RecipeController::class,'update'])->name('recipes.update');
 Route::get('/recipes/{recipe}', [RecipeController::class,'show'])->name('recipes.show');
+
+Route::get('/privacy-policy', [PageController::class,'privacyPolicy'])->name('privacy-policy');
+
+
