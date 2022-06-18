@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::post('login', 'Auth\LoginController@login')->name('do_login');
 // Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'common'], function () {
