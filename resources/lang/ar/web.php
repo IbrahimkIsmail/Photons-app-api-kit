@@ -97,5 +97,16 @@ return[
   'no featured' => 'no featured',  
   'featured' => 'featured',
   
-  'Password is not correct' => 'Password is not correct',
+  'Password is not correct' => 'Password is not correct',  
+  'Send Notification' => 'Send Notification',  
+  'Users Type' => 'Users Type',  
+  'All' => 'All',  
+  'Arabic Title' => 'Arabic Title',  
+  'Content' => 'Content',  
+  'send' => 'send',  
+  'Title is required' => 'Title is required',  
+  'Title at least must be 2 digits' => 'Title at least must be 2 digits',  
+  'Content is required' => 'Content is required',  
+  'Content at least must be 2 digits' => 'Content at least must be 2 digits',  
+  'User Type is required' => 'User Type is required',
 ];

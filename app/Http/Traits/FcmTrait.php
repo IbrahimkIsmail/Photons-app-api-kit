@@ -8,7 +8,7 @@ trait FcmTrait {
             define( 'API_ACCESS_KEY', 'AAAAWFfOXR8:APA91bGOvjbSV0uZ5B3RZwhpFyU5B0TwmAx-zDET_t_XZDL_Gj7Zxu3vizI0QbS2lVBNZLqUbjTBQfmeu_mAFCw7ZOwpLO1fTR3MBw6dZAEv9_SWmDLd04ld2N-kopDRWGGqxvVSjul6' );
             // prep the bundle
             $msg = array(
-                'body'      => $model->title,
+                'body'      => $model->description,
                 'title'     =>  $model->title,
                 'image'     => 'http://157.175.99.93/uploads/photos/recipes/main_images/2022-05-24/rxkQgowojpzboERH.jpg'  
             );

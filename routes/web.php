@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\NotificationController;
 
 
 /*
@@ -60,4 +61,6 @@ Route::get('/recipes/{recipe}', [RecipeController::class,'show'])->name('recipes
 
 Route::get('/privacy-policy', [PageController::class,'privacyPolicy'])->name('privacy-policy');
 
+Route::get('/notifications', [NotificationController::class,'create'])->name('notifications.create');
+Route::post('/notifications', [NotificationController::class,'store'])->name('notifications.send');
 
