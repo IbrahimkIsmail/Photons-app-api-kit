@@ -29,6 +29,7 @@ class RecipeResource extends JsonResource
             "prepares" => $this->prepares,
             "status" => $this->status,
             'featured' =>  $this->featured,
+            'deep_link' => $this->deep_link,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

@@ -36,6 +36,7 @@ class RecipeRequest extends FormRequest
             'prepares' => '',
             'status' => '',
             'featured' => '',
+            'deep_link' => '',
         ];
     }
 }

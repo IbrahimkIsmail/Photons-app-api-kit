@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\CategoryResource;
-use App\Http\Resources\HomeResource;
-use Illuminate\Http\Request;
-use App\Models\Category;
 use App\Models\Recipe;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use App\Http\Traits\FcmTrait;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\HomeResource;
 use App\Http\Resources\RecipeResource;
+use App\Http\Resources\CategoryResource;
+
 class CommonController extends Controller
 {
+
+    use FcmTrait;
+
 
     public function homepage()
     {
@@ -76,5 +81,12 @@ class CommonController extends Controller
         }
         $data = $query->paginate(25);
         return CategoryResource::collection($data);
+    }
+
+
+    public function test(){
+        
+      return  $this->generateDeebLink('ibrahim');
+
     }
 }

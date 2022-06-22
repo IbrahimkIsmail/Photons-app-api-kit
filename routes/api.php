@@ -29,6 +29,8 @@ Route::group(['prefix' => 'v1/'], function () {
         Route::get('/recipes/kitchens', [CommonController::class,'kitchens'])->name('recipes.kitchens');
         Route::get('/recipes/categories', [CommonController::class,'categories'])->name('recipes.categories');
         Route::get('/recipes/occasions', [CommonController::class,'occasions'])->name('recipes.occasions');
+        Route::get('test', [CommonController::class,'test'])->name('recipes.test');
+        
     });
    
     Route::group(['prefix' => 'recipes'], function () {

@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Traits;
 
+use Illuminate\Support\Facades\Http;
+
 trait FcmTrait {
 
     public function sendToTopic($model,$topikName) {
@@ -34,6 +36,44 @@ trait FcmTrait {
             $result = curl_exec($ch );
             curl_close( $ch );
               
+    }
+
+    public function generateDeebLink($slug){
+        $url = "https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=AIzaSyCsm-mhH_hHGi1NdRW9jG5PraAqPx_0mTI";
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $headers = array(
+            "Content-Type: application/json",
+            );
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+            $data = <<<DATA
+            {
+              "dynamicLinkInfo": {
+                "domainUriPrefix": "https://matbakhmisk.page.link",
+                "link": "http://ibraihmis.online/recipe_id?id={$slug}",
+                "androidInfo": {
+                "androidPackageName": "com.matbakhmisk.matbakhmisk"
+                },
+                "iosInfo": {
+                "iosBundleId": "com.matbakhmisk.matbakhmisk"
+                }
+            }
+            }
+            DATA;
+
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+            //for debug only!
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+            $resp = curl_exec($curl);
+            curl_close($curl);
+            return json_decode($resp)->shortLink;
+
     }
     
 }

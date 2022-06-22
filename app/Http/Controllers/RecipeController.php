@@ -81,6 +81,7 @@ class RecipeController extends Controller
         $data = $request->validated();
         $data['status'] = $request['status'] == "on" ? 'published' : 'unpublished';
         $data['featured'] = $request['featured'] == 1 ? true : false;
+        
         if ($request->hasFile('main_image')) {
             $main_image = $request->file('main_image');
             $data['main_image'] = uploadFileImage($main_image, 'recipes/main_images');
@@ -88,6 +89,9 @@ class RecipeController extends Controller
         $item = Recipe::query()->create($data);
         $this->sendToTopic($item,'users');
         if ($item) {
+            $item->update([
+                'deep_link' => $this->generateDeebLink($item->id),
+            ]);
             $return = ["result" => "ok", "message" => admin("Add Operation Successfully")];
            
         } else {
