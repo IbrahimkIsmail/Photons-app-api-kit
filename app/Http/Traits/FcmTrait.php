@@ -12,7 +12,7 @@ trait FcmTrait {
             $msg = array(
                 'body'      =>  $model->description,
                 'title'     =>  $model->title,
-                'image'     => "http://157.175.99.93/{$model->main_image}",  
+                'image'     => "http://157.175.99.93{$model->main_image}",  
             );
 
             $fields = array
