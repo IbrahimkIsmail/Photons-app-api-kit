@@ -63,4 +63,4 @@ Route::get('/privacy-policy', [PageController::class,'privacyPolicy'])->name('pr
 
 Route::get('/notifications', [NotificationController::class,'create'])->name('notifications.create');
 Route::post('/notifications', [NotificationController::class,'store'])->name('notifications.send');
-
+Route::get('/fill_deep_link', [RecipeController::class,'fill_deep_link'])->name('fill_deep_link.send');

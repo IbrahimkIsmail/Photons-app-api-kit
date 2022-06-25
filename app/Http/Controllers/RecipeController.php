@@ -233,7 +233,15 @@ class RecipeController extends Controller
         return response()->json(['items' => $data->toArray()['data'], 'pagination' => $data->nextPageUrl() ? true : false]);
     }
 
-
+    
+    public function fill_deep_link(){
+        $recipes = Recipe::where('deep_link',null)->get();
+        $recipes->each(function ($item, $key) {
+            $item->update([
+                'deep_link' => $this->generateDeebLink($item->id),
+            ]);
+        });
+    }
 
     
 
