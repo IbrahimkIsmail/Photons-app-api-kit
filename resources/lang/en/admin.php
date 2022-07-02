@@ -417,4 +417,6 @@ return [
   'Recipes' => 'Recipes',  
   'Add Operation Failed' => 'Add Operation Failed',  
   'web' => 'web',
+  
+  'deep_link' => 'deep_link',
 ];

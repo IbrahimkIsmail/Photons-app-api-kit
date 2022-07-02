@@ -183,7 +183,8 @@
                                 <th>{{web('Kitchen')}}</th>
                                 <th>{{web('Category')}}</th>
                                 <th>{{web('Occasion')}}</th>
-                               <th>{{admin('Image')}}</th>
+                                <th>{{admin('deep_link')}}</th>
+                                <th>{{admin('Image')}}</th>
                                 <th>{{admin('Status')}}</th>
                                 <th>{{web('Actions')}}</th>
                             </tr>
@@ -264,6 +265,7 @@
                         {data: 'kitchen', "className": "text-center", orderable: false,},
                         {data: 'category', "className": "text-center", orderable: false,},
                         {data: 'occasion', "className": "text-center", orderable: false,},
+                        {data: 'deep_link', "className": "text-center"},
                         {data: 'main_image', "className": "text-center"},
                         {data: 'status', "className": "text-center"},
                         {data: 'actions', "className": "text-center", responsivePriority: -1, orderable: false,},
@@ -275,12 +277,15 @@
                             render: function (data, type, full, meta) {
                                 var x = '<a  href="/recipes/edit/' + full.id + '" type="submit" style="margin:1px;" class="btn btn-sm btn-icon btn-icon-md btn-success btn-elevate btn-pill btn-elevate-air la la-edit fa-lg" id="edit_btn" title="{{web('Edit')}}"></a>';
                                 x = x + '<button type="submit" style="margin:1px;" class="btn btn-sm btn-icon btn-icon-md btn-danger btn-elevate btn-pill btn-elevate-air la la-window-close fa-lg" id="delete_btn" title="{{web('Delete')}}"></button>';
+                               
                                 if (full.status == 'published') {
                                     x = x + '<button type="submit" style="margin:1px;" class="btn btn-sm btn-icon btn-icon-md btn-warning btn-elevate btn-pill btn-elevate-air la la-stop-circle fa-lg" id="disable_btn" title="{{web('Disable')}}"></button>';
 
                                 } else if (full.status == 'unpublished') {
                                     x = x + '<button type="submit" style="margin:1px;" class="btn btn-sm btn-icon btn-icon-md btn-primary btn-elevate btn-pill btn-elevate-air la la-check-circle  fa-lg" id="activate_btn" title="{{web('Activate')}}"></button>';
                                 }
+                                x = x + '<button type="submit" style="margin:1px;" class="btn btn-sm btn-icon btn-icon-md btn-warning btn-elevate btn-pill btn-elevate-air la la-stop-circle fa-lg" id="dowinlaod_btn" title="{{web('dowinlaod')}}"></button>';
+
                                 return x;
 
                             },
@@ -422,8 +427,12 @@
                 })
 
             }
+            else if (event.target.id == "dowinlaod_btn") {
+                dowinloadeTableRow(data['id'],data['main_image'], swal);
+            }
+          
         });
-
+        
         function removeTableRow(id, swal) {
             var table = $('#kt_datatable').DataTable();
             $.ajax({
@@ -486,7 +495,25 @@
             });
         }
 
+        
+        function dowinloadeTableRow(id,url, swal) {
+            var table = $('#kt_datatable').DataTable();
+            var APP_URL = {!! json_encode(url('/')) !!}
+            console.log(APP_URL + url);
+            downloadURI(APP_URL + url, id+'.jpg')
 
+        }
+
+      
+
+        const downloadURI = (uri, name) => {
+            const link = document.createElement("a");
+            link.download = name;
+            link.href = uri;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 
 @endsection

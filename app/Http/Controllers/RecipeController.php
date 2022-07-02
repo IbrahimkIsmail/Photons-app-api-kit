@@ -53,6 +53,8 @@ class RecipeController extends Controller
                 return @$recipes->category->name;
             })->addColumn('occasion', function ($recipes) {
                 return @$recipes->occasion->name;
+            })->addColumn('deep_link', function ($recipes) {
+                return @$recipes->deep_link;
             })->addColumn('actions', function ($recipes) {
                 return null;
             })

@@ -108,5 +108,6 @@ return[
   'Title at least must be 2 digits' => 'Title at least must be 2 digits',  
   'Content is required' => 'Content is required',  
   'Content at least must be 2 digits' => 'Content at least must be 2 digits',  
-  'User Type is required' => 'User Type is required',
+  'User Type is required' => 'User Type is required',  
+  'dowinlaod' => 'dowinlaod',
 ];
